@@ -1,0 +1,40 @@
+{
+  "name": "lodex-widget",
+  "version": "1.0.0",
+  "description": "Web widget to enrich your resources with LODEX resources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint index.js && htmlhint index.html",
+    "build": "browserify --debug -r aja -r jbj -r jbj-rdfa -r sektor -r html5tooltipsjs -r ./index.js:lodex-widget -o lodex-widget.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inist-CNRS/lodex-widget.git"
+  },
+  "keywords": [
+    "widget",
+    "web",
+    "rdf",
+    "jsonld",
+    "enrichment"
+  ],
+  "author": "François Parmentier <francois.parmentier@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Inist-CNRS/lodex-widget/issues"
+  },
+  "homepage": "https://github.com/Inist-CNRS/lodex-widget#readme",
+  "dependencies": {
+    "aja": "^0.4.1",
+    "html5tooltipsjs": "^1.5.1",
+    "jbj": "^4.2.3",
+    "jbj-rdfa": "^1.1.2",
+    "sektor": "^1.1.4"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "eslint": "^2.11.1",
+    "htmlhint": "^0.9.13"
+  }
+}
