@@ -3,7 +3,7 @@ Web widget to enrich your resources with LODEX resources
 
 ## Installation
 
-Require the [lodex-widget.js]() script from your HTML page:
+Require the [lodex-widget.js](https://rawgit.com/Inist-CNRS/lodex-widget/master/lodex-widget.js) script from your HTML page:
 
 ```html
 <html>
