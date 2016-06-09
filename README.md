@@ -7,8 +7,10 @@ Require the [lodex-widget.js](https://rawgit.com/Inist-CNRS/lodex-widget/master/
 
 ```html
 <html>
-<body>
+<head>
     <script type="text/javascript" src="lodex-widget.js"></script>
+</head>
+<body>
 </body>
 </html>
 ```
