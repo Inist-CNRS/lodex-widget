@@ -3,6 +3,7 @@
 
 <head>
     <title>Lod Widget test</title>
+    <script src="./lodex-widget.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,11 @@
         </div>
     </div>
 
-    <script src="./lodex-widget.js"></script>
+    <script type="text/javascript">
+var LodexWidget = require('lodex-widget');
+var lw = new LodexWidget('article-types','facet');
+lw.add(); // add the tooltips in the DOM
+    </script>
 
 </body>
 
