@@ -30,6 +30,7 @@
     "html5tooltipsjs": "^1.5.1",
     "jbj": "^4.2.3",
     "jbj-rdfa": "^1.1.2",
+    "jbj-template": "^1.0.0",
     "sektor": "^1.1.4"
   },
   "devDependencies": {

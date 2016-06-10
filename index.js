@@ -4,6 +4,7 @@ const sektor = require('sektor');
 const aja = require('aja');
 const JBJ = require('jbj');
 JBJ.use(require('jbj-rdfa'));
+JBJ.use(require('jbj-template'));
 const html5tooltips = require('html5tooltipsjs');
 
 function LodexWidget(itemsSelector) {
@@ -37,22 +38,25 @@ function LodexWidget(itemsSelector) {
       .url(uri + "?alt=jsonld")
       .on(200, function (response) {
 
-        for (let [option, property] of properties) {
-          JBJ.render({
-            getJsonLdField: property
-          }, response[0], function (err, res) {
-            if (err) { console.error(err); return; }
-
-            tooltipOptions[option] = res.content;
-            properties.delete(option);
-            console.log('properties.size',properties.size)
-            if (properties.size) { return; }
-
-            console.log('tooltipOptions', tooltipOptions)
-            html5tooltips(tooltipOptions);
-          });
-
-        }
+        JBJ.render({
+          "$label": {
+            "getJsonLdField": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+            "get": "content"
+          },
+          "$description": {
+            "getJsonLdField": "http://www.w3.org/2004/02/skos/core#definition",
+            "get": "content"
+          },
+          "mask": "label,description",
+          "template": "<p>{{label}}</p>\n<p>{{description}}</p>"
+        },
+        response[0],
+        function (err, res) {
+          if (err) { console.error(err); return; }
+          console.log("res", res)
+          tooltipOptions.contentText = res;
+          html5tooltips(tooltipOptions);
+        });
 
       })
       .go();
