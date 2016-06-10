@@ -1,11 +1,11 @@
 /*eslint-env es6,browser*/
-
-const sektor = require('sektor');
-const aja = require('aja');
-const JBJ = require('jbj');
-JBJ.use(require('jbj-rdfa'));
-JBJ.use(require('jbj-template'));
-const html5tooltips = require('html5tooltipsjs');
+"use strict";
+const sektor = require("sektor");
+const aja = require("aja");
+const JBJ = require("jbj");
+JBJ.use(require("jbj-rdfa"));
+JBJ.use(require("jbj-template"));
+const html5tooltips = require("html5tooltipsjs");
 
 function LodexWidget(itemsSelector, jbjStylesheet = {
   "get": 0,
@@ -26,10 +26,8 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
     return;
   }
 
-  for(let item of _items) {
-    const { innerText: value,
-          attributes: { about: { value: uri }} }
-      = item;
+  for (let item of _items) {
+    const { attributes: { about: { value: uri }} } = item;
 
     const selector = itemsSelector+'[about="'+ uri +'"]';
     const tooltipOptions = {
