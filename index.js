@@ -21,13 +21,7 @@ function LodexWidget(itemsSelector) {
             attributes: { about: { value: uri }} }
         = item;
 
-      const properties = new Map([
-        ["contentText", "http://www.w3.org/2008/05/skos-xl#prefLabel"],
-        ["contentMore", "http://www.w3.org/2004/02/skos/core#definition"]
-      ]);
-
       const selector = itemsSelector+'[about="'+ uri +'"]';
-      console.log('selector', selector);
       const tooltipOptions = {
         targetSelector: selector,
         color: "bamboo",
@@ -53,7 +47,6 @@ function LodexWidget(itemsSelector) {
         response[0],
         function (err, res) {
           if (err) { console.error(err); return; }
-          console.log("res", res)
           tooltipOptions.contentText = res;
           html5tooltips(tooltipOptions);
         });
