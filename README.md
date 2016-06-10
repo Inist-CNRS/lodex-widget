@@ -37,6 +37,6 @@ Require the [lodex-widget.js](https://rawgit.com/Inist-CNRS/lodex-widget/master/
 ```javascript
 // example usage
 var LodexWidget = require('lodex-widget');
-var lw = new LodexWidget('article-types','facet');
+var lw = new LodexWidget('#article-types .facet');
 lw.add(); // add the tooltips in the DOM
 ```

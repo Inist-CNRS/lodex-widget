@@ -6,27 +6,17 @@ const JBJ = require('jbj');
 JBJ.use(require('jbj-rdfa'));
 const html5tooltips = require('html5tooltipsjs');
 
-function LodexWidget(id = null, classe = null) {
-  var _id = id;
-  var _class = classe;
-
-  this.id = function id(id) {
-    _id = id;
-    return this;
-  };
-
-  this.classe = function classe(classe) {
-    _class = classe;
-    return this;
-  };
+function LodexWidget(itemsSelector) {
+  var _itemsSelector = itemsSelector;
+  var _items = sektor(itemsSelector);
+  if (!_items.length) {
+    console.error(`Selector ${itemsSelector} does not match any DOM element!`);
+    return;
+  }
 
   this.add = function add() {
 
-    const selector = `#${_id} .${_class}`;
-    const items = sektor(selector);
-    if (!items.length) { console.error(`Selector ${selector} does not match any DOM element!`); return; }
-
-    for(let item of items) {
+    for(let item of _items) {
       const { innerText: value,
             attributes: { about: { value: uri }} }
         = item;
