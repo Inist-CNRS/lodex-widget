@@ -18,20 +18,20 @@ Require the [lodex-widget.js](https://rawgit.com/Inist-CNRS/lodex-widget/master/
 ## Usage
 
 ```html
-<div id="article-types">
-    <div class="facet" about="http://article-type.lod.istex.fr/=/research-article" property="dc:identifier">
+<ul id="article-types">
+    <li><span class="facet" about="http://article-type.lod.istex.fr/=/research-article" property="dc:identifier">
         research-article
-    </div>
-    <div class="facet" about="http://article-type.lod.istex.fr/=/review-article" property="dc:identifier">
+    </span></li>
+    <li><span class="facet" about="http://article-type.lod.istex.fr/=/review-article" property="dc:identifier">
         review-article
-    </div>
-    <div class="facet" about="http://article-type.lod.istex.fr/=/article" property="dc:identifier">
+    </span></li>
+    <li><span class="facet" about="http://article-type.lod.istex.fr/=/article" property="dc:identifier">
         article
-    </div>
-    <div class="facet" about="http://article-type.lod.istex.fr/=/case-report" property="dc:identifier">
+    </span></li>
+    <li><span class="facet" about="http://article-type.lod.istex.fr/=/case-report" property="dc:identifier">
         case-report
-    </div>
-</div>
+    </span></li>
+</ul>
 ```
 
 ```javascript

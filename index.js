@@ -7,7 +7,6 @@ JBJ.use(require('jbj-rdfa'));
 const html5tooltips = require('html5tooltipsjs');
 
 function LodexWidget(itemsSelector) {
-  var _itemsSelector = itemsSelector;
   var _items = sektor(itemsSelector);
   if (!_items.length) {
     console.error(`Selector ${itemsSelector} does not match any DOM element!`);
@@ -26,10 +25,12 @@ function LodexWidget(itemsSelector) {
         ["contentMore", "http://www.w3.org/2004/02/skos/core#definition"]
       ]);
 
-      const selector = '#article-types .facet[about="'+ uri +'"]';
+      const selector = itemsSelector+'[about="'+ uri +'"]';
       console.log('selector', selector);
       const tooltipOptions = {
-        targetSelector: selector
+        targetSelector: selector,
+        color: "bamboo",
+        stickTo: "right"
       };
 
       aja()
