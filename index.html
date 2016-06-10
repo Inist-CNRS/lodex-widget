@@ -9,20 +9,20 @@
 <body>
 
     <h2>Corpus</h2>
-    <div id="corpus">
-        <div class="facet" about="http://corpus.lod.istex.fr/=/wiley" property="dc:identifier">
+    <ul id="corpus">
+        <li><span class="facet" about="http://corpus.lod.istex.fr/=/wiley" property="dc:identifier">
             wiley
-        </div>
-        <div class="facet" about="http://corpus.lod.istex.fr/=/elsevier" property="dc:identifier">
+        </span></li>
+        <li><span class="facet" about="http://corpus.lod.istex.fr/=/elsevier" property="dc:identifier">
             elsevier
-        </div>
-        <div class="facet" about="http://corpus.lod.istex.fr/=/oup" property="dc:identifier">
+        </span></li>
+        <li><span class="facet" about="http://corpus.lod.istex.fr/=/oup" property="dc:identifier">
             oup
-        </div>
-        <div class="facet" about="http://corpus.lod.istex.fr/=/bmj" property="dc:identifier">
+        </span></li>
+        <li><span class="facet" about="http://corpus.lod.istex.fr/=/bmj" property="dc:identifier">
             bmj
-        </div>
-    </div>
+        </span></li>
+    </ul>
 
     <h2>Article Type</h2>
     <ul id="article-types">
@@ -43,7 +43,6 @@
     <script type="text/javascript">
 var LodexWidget = require('lodex-widget');
 var lw = new LodexWidget('#article-types .facet');
-lw.add(); // add the tooltips in the DOM
     </script>
 
 </body>
