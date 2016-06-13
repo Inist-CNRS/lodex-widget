@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lod Widget test 3</title>
+    <script src="./lodex-widget.js"></script>
+</head>
+
+<body>
+
+    <p>
+        Display semantic web verbs.
+    </p>
+
+    <h2>Article Type</h2>
+    <ul id="article-types">
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/research-article" property="dc:identifier">
+            research-article
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/review-article" property="dc:identifier">
+            review-article
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/article" property="dc:identifier">
+            article
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/case-report" property="dc:identifier">
+            case-report
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/brief-communication" property="dc:identifier">
+            brief-communication
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/abstract" property="dc:identifier">
+            abstract
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/editorial" property="dc:identifier">
+            editorial
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/book-reviews" property="dc:identifier">
+            book-reviews
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/conference" property="dc:identifier">
+            conference
+        </span></li>
+        <li><span class="facet" about="http://article-type.lod.istex.fr/=/other" property="dc:identifier">
+            other
+        </span></li>
+    </ul>
+
+    <script type="text/javascript">
+var LodexWidget = require('lodex-widget');
+var lw = new LodexWidget('#article-types .facet', {
+  "get": 0,
+  "$label": {
+    "getJsonLdField": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+    "get": "content"
+  },
+  "$description": {
+    "getJsonLdField": "http://www.w3.org/2004/02/skos/core#definition",
+    "get": "content"
+  },
+  "$note": {
+    "getJsonLdField": "http://www.w3.org/2004/02/skos/core#note",
+    "get": "content"
+  },
+  "$scopeNote": {
+    "getJsonLdField": "http://www.w3.org/2004/02/skos/core#scopeNote",
+    "get": "content",
+    "trim": true
+  },
+  "$example": {
+    "getJsonLdField": "http://www.w3.org/2004/02/skos/core#example",
+    "get": "content"
+  },
+  "mask": "label,description,note,scopeNote,example",
+  "template": "<style>dt {font-weight: bold}</style><dl>\n<dt>skos-xl:prefLabel</dt><dd>{{label}}</dd>\n<dt>skos:definition</dt><dd>{{description}}</dd>\n<dt>skos:note</dt><dd>{{note}}</dd>\n<dt>skos:scopeNote</dt><dd>{{scopeNote}}</dd>\n<dt>skos:example</dt><dd>{{example}}</dd>\n</dl>\n"
+});
+    </script>
+
+</body>
+
+</html>
