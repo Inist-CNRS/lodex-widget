@@ -32,7 +32,7 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
     const selector = itemsSelector+'[about="'+ uri +'"]';
     const tooltipOptions = {
       targetSelector: selector,
-      color: "bamboo",
+      color: "cloud",
       stickTo: "right"
     };
 
