@@ -155,7 +155,7 @@ URL contained in the `about` attribute of the items selected.
 }
 ```
 
-This stylesheet create two new fields (`label` and `description`), using
+This stylesheet creates two new fields (`label` and `description`), using
 [`getJsonLdField`](https://github.com/Inist-CNRS/node-jbj-rdfa#getJsonLdField)
 to select the field in JSON-LD which id is given in parameter.
 
