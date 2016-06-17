@@ -49,6 +49,8 @@
     <script type="text/javascript">
 var LodexWidget = require('lodex-widget');
 var lw = new LodexWidget('#article-types .facet', {
+  persistent: true,
+  jbjStylesheet: {
   "get": 0,
   "$label": {
     "getJsonLdField": "http://www.w3.org/2008/05/skos-xl#prefLabel",
@@ -73,8 +75,8 @@ var lw = new LodexWidget('#article-types .facet', {
   },
   "mask": "label,description,note,scopeNote,example",
   "template": "<h3>{{label}}</h3>\n<p>{{description}}</p>\n<p>{{note}} ({{scopeNote}})</p>\n<pre>{{example}}</pre>"
-})
-.apply({persistent: true});
+}})
+.apply();
     </script>
 
 </body>

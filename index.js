@@ -8,19 +8,21 @@ JBJ.use(require("jbj-rdfa"));
 JBJ.use(require("jbj-template"));
 require("html5tooltipsjs");
 
-function LodexWidget(itemsSelector, jbjStylesheet = {
-  "get": 0,
-  "$label": {
-    "getJsonLdField": "http://www.w3.org/2008/05/skos-xl#prefLabel",
-    "get": "content"
-  },
-  "$description": {
-    "getJsonLdField": "http://www.w3.org/2004/02/skos/core#definition",
-    "get": "content"
-  },
-  "mask": "label,description",
-  "template": "<p>{{label}}</p>\n<p>{{description}}</p>"
-}) {
+function LodexWidget(itemsSelector, {
+  persistent = false,
+  jbjStylesheet = {
+    "get": 0,
+    "$label": {
+      "getJsonLdField": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+      "get": "content"
+    },
+    "$description": {
+      "getJsonLdField": "http://www.w3.org/2004/02/skos/core#definition",
+      "get": "content"
+    },
+    "mask": "label,description",
+    "template": "<p>{{label}}</p>\n<p>{{description}}</p>"
+  }} = {}) {
   // Associate URI and EventTarget
   var _items = sektor(itemsSelector);
   if (!_items.length) {
@@ -76,7 +78,7 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
 
   let _persistent = false;
 
-  this.apply = function apply({persistent = false} = {}) {
+  this.apply = function apply() {
     _persistent = persistent;
     for (let item of _items) {
       const { attributes: { about: { value: uri }} } = item;

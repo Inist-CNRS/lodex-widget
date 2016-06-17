@@ -85,6 +85,7 @@ lw.apply();
 ![Example of tooltips on Articles Types](lodex-widget-research-article.png)
 
 ## LodexWidget
+Parameters: [items selector](#items-selector), [options](#options).
 
 ### items selector
 *Required parameter*
@@ -94,7 +95,30 @@ The pointed elements must have an `about` attribute required.
 
 Example: `#articles-types .facet`
 
-### JBJ stylesheet
+
+### options
+Object containing all options:
+
+- [persistent](#persistent): boolean (false by default)
+- [jbjStylesheet](#jbjStylesheet): object 
+  (see [JBJ](http://inist-cnrs.github.io/jbj-playground/))
+
+#### persistent
+*boolean*
+*default value: false*
+
+If `true`, the tooltip won't hide when the mouse leaves its item's zone.
+It hides when the mouse enter the zone of another item.
+
+Ex:
+```javascript
+var LodexWidget = require('lodex-widget');
+var lw = new LodexWidget('#article-types .facet', { persistent: true });
+lw.apply();
+```
+
+
+#### jbjStylesheet
 *Optional parameter*
 
 A [JBJ](https://github.com/Inist-CNRS/node-jbj) stylesheet, which returns a
@@ -169,25 +193,51 @@ action then creates the HTML which will be displayed within the tooltips.
 
 The best way to see what will be produced by the stylesheet is to use the [JBJ-Playground](http://inist-cnrs.github.io/jbj-playground/?input=http://article-type.lod.istex.fr/=/research-article?alt=jsonld).
 
+Ex:
+```javascript
+var LodexWidget = require('lodex-widget');
+var lw = new LodexWidget('#article-types .facet', { 
+    persistent: true, 
+    jbjStylesheet: {
+    {
+        "get": 0,
+        "$label": {
+            "getJsonLdField": ["http://www.w3.org/2008/05/skos-xl#prefLabel","en"],
+            "get": "content"
+        },
+        "$description": {
+            "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#definition","en"],
+            "get": "content"
+        },
+        "$note": {
+            "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#note", "en"],
+            "get": "content"
+        },
+        "$scopeNote": {
+            "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#scopeNote","en"],
+            "get": "content",
+            "trim": true
+        },
+        "$example": {
+            "getJsonLdField": "http://www.w3.org/2004/02/skos/core#example",
+            "get": "content"
+        },
+        "mask": "label,description,note,scopeNote,example",
+        "template": "<h3>{{label}}</h3>\n<p>{{description}}</p>\n<p>{{note}} ({{scopeNote}})</p>\n<pre>{{example}}</pre>"
+    }
+});
+lw.apply();
+```
+
+
 ## apply
 LodexWidget's method, to apply the tooltips in the page.
 
-### options
-Object containing all options.
-
-#### persistent
-*boolean*
-*default value: false*
-
-If `true`, the tooltip won't hide when the mouse leaves its item's zone.
-It hides when the mouse enter the zone of another item.
-
 Ex:
-
 ```javascript
 var LodexWidget = require('lodex-widget');
-var lw = new LodexWidget('#article-types .facet');
-lw.apply({ persistent: true });
+var lw = new LodexWidget('#article-types .facet', { persistent: true });
+lw.apply();
 ```
 
 ## desactivate

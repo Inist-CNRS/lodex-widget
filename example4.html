@@ -49,30 +49,32 @@
     <script type="text/javascript">
 var LodexWidget = require('lodex-widget');
 var lw = new LodexWidget('#article-types .facet', {
-  "get": 0,
-  "$label": {
-    "getJsonLdField": ["http://www.w3.org/2008/05/skos-xl#prefLabel","en"],
-    "get": "content"
-  },
-  "$description": {
-    "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#definition","en"],
-    "get": "content"
-  },
-  "$note": {
-    "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#note", "en"],
-    "get": "content"
-  },
-  "$scopeNote": {
-    "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#scopeNote","en"],
-    "get": "content",
-    "trim": true
-  },
-  "$example": {
-    "getJsonLdField": "http://www.w3.org/2004/02/skos/core#example",
-    "get": "content"
-  },
-  "mask": "label,description,note,scopeNote,example",
-  "template": "<h3>{{label}}</h3>\n<p>{{description}}</p>\n<p>{{note}} ({{scopeNote}})</p>\n<pre>{{example}}</pre>"
+  jbjStylesheet: {
+    "get": 0,
+    "$label": {
+      "getJsonLdField": ["http://www.w3.org/2008/05/skos-xl#prefLabel","en"],
+      "get": "content"
+    },
+    "$description": {
+      "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#definition","en"],
+      "get": "content"
+    },
+    "$note": {
+      "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#note", "en"],
+      "get": "content"
+    },
+    "$scopeNote": {
+      "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#scopeNote","en"],
+      "get": "content",
+      "trim": true
+    },
+    "$example": {
+      "getJsonLdField": "http://www.w3.org/2004/02/skos/core#example",
+      "get": "content"
+    },
+    "mask": "label,description,note,scopeNote,example",
+    "template": "<h3>{{label}}</h3>\n<p>{{description}}</p>\n<p>{{note}} ({{scopeNote}})</p>\n<pre>{{example}}</pre>"
+  }
 })
 .apply();
     </script>
