@@ -88,6 +88,7 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
         response,
         function (err, res) {
           if (err) { console.error(err); return; }
+          res = `<p><a href="${uri}">Source</a></p>\n${res}`;
           tooltipOptions.contentText = res;
           var tooltip = new HTML5TooltipUIComponent;
           tooltip.set(tooltipOptions);
