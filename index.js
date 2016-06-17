@@ -76,7 +76,7 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
 
   let _persistent = false;
 
-  this.add = function add({persistent = false} = {}) {
+  this.apply = function apply({persistent = false} = {}) {
     _persistent = persistent;
     for (let item of _items) {
       const { attributes: { about: { value: uri }} } = item;

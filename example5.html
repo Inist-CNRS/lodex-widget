@@ -77,7 +77,7 @@ const lw = new LodexWidget('#article-types .facet', {
   "mask": "label,description,note,scopeNote,example",
   "template": "<h3>{{label}}</h3>\n<p>{{description}}</p>\n<p>{{note}} ({{scopeNote}})</p>\n<pre>{{example}}</pre>"
 })
-.add({persistent: true});
+.apply({persistent: true});
 
 const btnActivate = document.getElementById('button-activate');
 const btnDesactivate = document.getElementById('button-desactivate');

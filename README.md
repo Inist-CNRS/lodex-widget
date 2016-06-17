@@ -38,7 +38,7 @@ Require the [lodex-widget.js](https://rawgit.com/Inist-CNRS/lodex-widget/master/
 // example usage
 var LodexWidget = require('lodex-widget');
 var lw = new LodexWidget('#article-types .facet');
-lw.add();
+lw.apply();
 ```
 
 
@@ -74,7 +74,7 @@ lw.add();
     <script type="text/javascript">
 var LodexWidget = require('lodex-widget');
 var lw = new LodexWidget('#article-types .facet');
-lw.add();
+lw.apply();
     </script>
 
 </body>
@@ -169,8 +169,8 @@ action then creates the HTML which will be displayed within the tooltips.
 
 The best way to see what will be produced by the stylesheet is to use the [JBJ-Playground](http://inist-cnrs.github.io/jbj-playground/?input=http://article-type.lod.istex.fr/=/research-article?alt=jsonld).
 
-## add
-LodexWidget's method, to add the tooltips in the page.
+## apply
+LodexWidget's method, to apply the tooltips in the page.
 
 ### options
 Object containing all options.
@@ -187,7 +187,7 @@ Ex:
 ```javascript
 var LodexWidget = require('lodex-widget');
 var lw = new LodexWidget('#article-types .facet');
-lw.add({ persistent: true });
+lw.apply({ persistent: true });
 ```
 
 ## desactivate
