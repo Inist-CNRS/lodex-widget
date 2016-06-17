@@ -69,6 +69,10 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
     const tooltip = getTooltip(e.target);
     tooltip.hide();
   };
+  window.closeTooltip = function closeTooltip(uri) {
+    const tooltip = _tooltips[uri];
+    tooltip.hide();
+  };
 
   this.add = function add({persistent = false} = {}) {
     for (let item of _items) {
@@ -88,12 +92,17 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
         response,
         function (err, res) {
           if (err) { console.error(err); return; }
-          res = `<p><a href="${uri}">Source</a></p>\n${res}`;
+
+          res = `
+          <button onclick="closeTooltip('${uri}');" style="float:right">x</button>
+          <p><a href="${uri}">Source</a></p>
+          ${res}`;
           tooltipOptions.contentText = res;
           var tooltip = new HTML5TooltipUIComponent;
           tooltip.set(tooltipOptions);
           _tooltips[uri] = tooltip;
           document.body.appendChild(tooltip.elements[0]);
+
           target.addEventListener("mouseenter", show);
           if (!persistent) {
             target.addEventListener("mouseleave", hide);
