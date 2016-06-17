@@ -74,7 +74,10 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
     tooltip.hide();
   };
 
+  let _persistent = false;
+
   this.add = function add({persistent = false} = {}) {
+    _persistent = persistent;
     for (let item of _items) {
       const { attributes: { about: { value: uri }} } = item;
       const target = getTarget(item);
@@ -134,8 +137,11 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
   this.activate = function activate() {
     for (let item of _items) {
       item.addEventListener("mouseenter", show);
-      item.addEventListener("mouseleave", hide);
+      if (!_persistent) {
+        item.addEventListener("mouseleave", hide);
+      }
     }
+    return this;
   };
 
   this.desactivate = function desactivate() {
@@ -143,6 +149,7 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
       item.removeEventListener("mouseenter", show);
       item.removeEventListener("mouseleave", hide);
     }
+    return this;
   };
 
 }
