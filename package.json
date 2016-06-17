@@ -1,6 +1,6 @@
 {
   "name": "lodex-widget",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Web widget to enrich your resources with LODEX resources",
   "main": "index.js",
   "scripts": {
