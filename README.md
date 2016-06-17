@@ -38,6 +38,7 @@ Require the [lodex-widget.js](https://rawgit.com/Inist-CNRS/lodex-widget/master/
 // example usage
 var LodexWidget = require('lodex-widget');
 var lw = new LodexWidget('#article-types .facet');
+lw.add();
 ```
 
 
@@ -73,6 +74,7 @@ var lw = new LodexWidget('#article-types .facet');
     <script type="text/javascript">
 var LodexWidget = require('lodex-widget');
 var lw = new LodexWidget('#article-types .facet');
+lw.add();
     </script>
 
 </body>
@@ -82,7 +84,7 @@ var lw = new LodexWidget('#article-types .facet');
 
 ![Example of tooltips on Articles Types](lodex-widget-research-article.png)
 
-## Parameters
+## LodexWidget
 
 ### items selector
 *Required parameter*
@@ -166,3 +168,16 @@ The [`template`](https://github.com/Inist-CNRS/node-jbj-template#template)
 action then creates the HTML which will be displayed within the tooltips.
 
 The best way to see what will be produced by the stylesheet is to use the [JBJ-Playground](http://inist-cnrs.github.io/jbj-playground/?input=http://article-type.lod.istex.fr/=/research-article?alt=jsonld).
+
+## add
+LodexWidget's method, to add the tooltips in the page.
+
+### options
+Object containing all options.
+
+#### persistent
+*boolean*
+*default value: false*
+
+If `true`, the tooltip won't hide when the mouse leaves its item's zone.
+It hides when the mouse enter the zone of another item.
