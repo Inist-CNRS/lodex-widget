@@ -108,19 +108,32 @@ function LodexWidget(itemsSelector, jbjStylesheet = {
     return this;
   };
 
-  this.persist = function persist(persistent = false) {
+  // this.persist = function persist(persistent = false) {
+  //   for (let item of _items) {
+  //     if (persistent) {
+  //       item.addEventListener("mouseenter", show);
+  //       item.removeEventListener("mouseleave", hide);
+  //     }
+  //     else {
+  //       item.addEventListener("mouseenter", show);
+  //       item.addEventListener("mouseleave", hide);
+  //     }
+  //   }
+  //   return this;
+  // };
+
+  this.activate = function activate() {
     for (let item of _items) {
-      const target = getTarget(item);
-      if (persistent) {
-        target.addEventListener("mouseenter", show);
-        target.removeEventListener("mouseleave", hide);
-      }
-      else {
-        target.addEventListener("mouseenter", show);
-        target.addEventListener("mouseleave", hide);
-      }
+      item.addEventListener("mouseenter", show);
+      item.addEventListener("mouseleave", hide);
     }
-    return this;
+  };
+
+  this.desactivate = function desactivate() {
+    for (let item of _items) {
+      item.removeEventListener("mouseenter", show);
+      item.removeEventListener("mouseleave", hide);
+    }
   };
 
 }

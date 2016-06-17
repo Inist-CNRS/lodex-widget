@@ -181,3 +181,24 @@ Object containing all options.
 
 If `true`, the tooltip won't hide when the mouse leaves its item's zone.
 It hides when the mouse enter the zone of another item.
+
+Ex:
+
+```javascript
+var LodexWidget = require('lodex-widget');
+var lw = new LodexWidget('#article-types .facet');
+lw.add({ persistent: true });
+```
+
+## desactivate
+LodexWidget's method, to desactivate its tooltips in the page.
+
+See [example 5](./example5.html).
+
+## activate
+
+LodexWidget's method, to activate its tooltips in the page.
+They are activated by default, but it can be useful after usage of
+`desactivate()`.
+
+See [example 5](./example5.html).
