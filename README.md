@@ -15,6 +15,10 @@ Require the [lodex-widget.js](https://rawgit.com/Inist-CNRS/lodex-widget/master/
 </html>
 ```
 
+If you put the script in your site's sources, copy the
+[LODEX-10.png](https://rawgit.com/Inist-CNRS/lodex-widget/master/LODEX-10.png)
+in the same directory.
+
 ## Usage
 
 ```html
@@ -100,7 +104,7 @@ Example: `#articles-types .facet`
 Object containing all options:
 
 - [persistent](#persistent): boolean (false by default)
-- [jbjStylesheet](#jbjStylesheet): object 
+- [jbjStylesheet](#jbjstylesheet): object
   (see [JBJ](http://inist-cnrs.github.io/jbj-playground/))
 
 #### persistent

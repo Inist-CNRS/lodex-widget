@@ -23,7 +23,7 @@ function LodexWidget(itemsSelector, {
     "mask": "label,description",
     "template": "<p>{{label}}</p>\n<p>{{description}}</p>"
   }} = {}) {
-  // Associate URI and EventTarget
+
   var _items = sektor(itemsSelector);
   if (!_items.length) {
     console.error(`Selector ${itemsSelector} does not match any DOM element!`);
@@ -49,6 +49,7 @@ function LodexWidget(itemsSelector, {
   };
 
   const _tooltips = {};
+  const _logos = [];
   /**
    * Get the tooltip associated to the item (having an about attribute)
    *
@@ -76,10 +77,17 @@ function LodexWidget(itemsSelector, {
     tooltip.hide();
   };
 
-  let _persistent = false;
+  const addImg = function addImg(target) {
+    var newImg = document.createElement("img");
+    newImg.setAttribute("src", "./LODEX-10.png");
+    newImg.setAttribute("class", "lodex-widget-logo");
+    target.appendChild(newImg);
+    _logos.push(newImg);
+  };
+
+  let _persistent = persistent;
 
   this.apply = function apply() {
-    _persistent = persistent;
     for (let item of _items) {
       const { attributes: { about: { value: uri }} } = item;
       const target = getTarget(item);
@@ -88,6 +96,7 @@ function LodexWidget(itemsSelector, {
         color: "cloud",
         stickTo: "right"
       };
+      addImg(target);
 
       aja()
       .url(uri + "?alt=jsonld")
@@ -122,7 +131,8 @@ function LodexWidget(itemsSelector, {
     return this;
   };
 
-  // this.persist = function persist(persistent = false) {
+  // this.persist = function persist(persistent = true) {
+  //   _persistent = persistent;
   //   for (let item of _items) {
   //     if (persistent) {
   //       item.addEventListener("mouseenter", show);
@@ -143,6 +153,9 @@ function LodexWidget(itemsSelector, {
         item.addEventListener("mouseleave", hide);
       }
     }
+    for (let logo of _logos) {
+      logo.removeAttribute("style");
+    }
     return this;
   };
 
@@ -150,6 +163,9 @@ function LodexWidget(itemsSelector, {
     for (let item of _items) {
       item.removeEventListener("mouseenter", show);
       item.removeEventListener("mouseleave", hide);
+    }
+    for (let logo of _logos) {
+      logo.setAttribute("style", "display: none");
     }
     return this;
   };

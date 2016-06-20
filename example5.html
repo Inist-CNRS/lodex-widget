@@ -52,6 +52,7 @@
     <script type="text/javascript">
 const LodexWidget = require('lodex-widget');
 const lw = new LodexWidget('#article-types .facet', {
+  persistent: true,
   jbjStylesheet: {
     "get": 0,
     "$label": {
@@ -79,7 +80,7 @@ const lw = new LodexWidget('#article-types .facet', {
     "template": "<h3>{{label}}</h3>\n<p>{{description}}</p>\n<p>{{note}} ({{scopeNote}})</p>\n<pre>{{example}}</pre>"
   }
 })
-.apply({persistent: true});
+.apply();
 
 const btnActivate = document.getElementById('button-activate');
 const btnDesactivate = document.getElementById('button-desactivate');
