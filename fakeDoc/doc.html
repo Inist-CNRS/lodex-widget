@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://api.istex.fr/documentation/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>ISTEX API Documentation</title>
+
+    <link type="text/css" rel="stylesheet" href="./doc_files/reset.css">
+    <link type="text/css" rel="stylesheet" href="./doc_files/solarized_dark.min.css">
+    <link type="text/css" rel="stylesheet" href="./doc_files/docs.css">
+    <link type="text/css" rel="stylesheet" href="./doc_files/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="./doc_files/doc.css">
+
+    <script type="text/javascript" src="./doc_files/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="./doc_files/highlight.min.js"></script>
+    <script type="text/javascript" src="./doc_files/lunr.min.js"></script>
+    <script src="./doc_files/main.js"></script>
+
+
+
+    <script type="text/javascript">var BASE_URL = "./";</script>
+    <script type="text/javascript" src="./doc_files/viewer.js"></script>
+
+    <script type="text/javascript" src="../lodex-widget.js"></script>
+
+<style>.sandbox a,.sandbox abbr,.sandbox acronym,.sandbox address,.sandbox applet,.sandbox article,.sandbox aside,.sandbox audio,.sandbox b,.sandbox big,.sandbox blockquote,.sandbox body,.sandbox canvas,.sandbox caption,.sandbox center,.sandbox cite,.sandbox code,.sandbox dd,.sandbox del,.sandbox details,.sandbox dfn,.sandbox div,.sandbox dl,.sandbox dt,.sandbox em,.sandbox embed,.sandbox fieldset,.sandbox figcaption,.sandbox figure,.sandbox footer,.sandbox form,.sandbox h1,.sandbox h2,.sandbox h3,.sandbox h4,.sandbox h5,.sandbox h6,.sandbox header,.sandbox hgroup,.sandbox html,.sandbox i,.sandbox iframe,.sandbox img,.sandbox ins,.sandbox kbd,.sandbox label,.sandbox legend,.sandbox li,.sandbox mark,.sandbox menu,.sandbox nav,.sandbox object,.sandbox ol,.sandbox output,.sandbox p,.sandbox pre,.sandbox q,.sandbox ruby,.sandbox s,.sandbox samp,.sandbox section,.sandbox small,.sandbox span,.sandbox strike,.sandbox strong,.sandbox sub,.sandbox summary,.sandbox sup,.sandbox table,.sandbox tbody,.sandbox td,.sandbox tfoot,.sandbox th,.sandbox thead,.sandbox time,.sandbox tr,.sandbox tt,.sandbox u,.sandbox ul,.sandbox var,.sandbox video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}#istex-web-header #barresrent,#istex-web-header #surentete,#istex-web-header .srent li li{border-bottom:1px solid #eaeade}.sandbox article,.sandbox aside,.sandbox details,.sandbox figcaption,.sandbox figure,.sandbox footer,.sandbox header,.sandbox hgroup,.sandbox menu,.sandbox nav,.sandbox section{display:block}.sandbox body{line-height:1}.sandbox ol,.sandbox ul{list-style:none}.sandbox blockquote,.sandbox q{quotes:none}.sandbox blockquote:after,.sandbox blockquote:before,.sandbox q:after,.sandbox q:before{content:'';content:none}.sandbox table{border-collapse:collapse;border-spacing:0}#istex-web-header #surentete{margin:0 auto;padding:0;font-family:Arial,Helvetica,sans-serif;color:#333;height:40px;width:990px;position:relative;z-index:1000}#istex-web-header .bsbb,#istex-web-header .srent li{box-sizing:border-box}#istex-web-header .clear{clear:both}#istex-web-header .logoistex{position:absolute;margin:3px 0 0}#istex-web-header .logoanr img,#istex-web-header .logoistex img{float:left}#istex-web-header .srent{margin:0 50px 0 0;padding:10px 0 0;list-style-type:none;position:relative;background:0 0;float:right}#istex-web-header .srent img{padding:0 7px 0 20px}#istex-web-header .srent li{float:left;position:relative;display:block;height:30px;line-height:30px;padding-right:10px}#istex-web-header .srent a:link{text-decoration:none;height:30px}#istex-web-header .srent a:active,#istex-web-header .srent a:hover,#istex-web-header .srent a:visited{text-decoration:underline}#istex-web-header .srent a:active,#istex-web-header .srent a:hover,#istex-web-header .srent a:link,#istex-web-header .srent a:visited{color:#000;display:block;text-align:center;font-size:.8em}#istex-web-header .srent li li{background-color:transparent;border-right:1px solid #eaeade;border-left:1px solid #eaeade;padding-left:10px;color:#fff}#istex-web-header .srent li li,#istex-web-header .srent li li a,#istex-web-header .srent li li a:focus,#istex-web-header .srent li li a:hover{display:block;width:100px}#istex-web-header .srent li li a:active,#istex-web-header .srent li li a:focus,#istex-web-header .srent li li a:hover,#istex-web-header .srent li li a:link,#istex-web-header .srent li li a:visited{text-align:left}#istex-web-header .srent li li a:focus,#istex-web-header .srent li li a:hover{text-align:left;display:block;width:100px;height:30px}#istex-web-header .srent ul{position:absolute;display:none;padding:0;list-style-type:none}#istex-web-header .srent li ul a{float:left}#istex-web-header .srent li:focus ul,#istex-web-header .srent li:hover ul{display:block}#istex-web-header .srent li li img{padding:0 5px 0 3px}#istex-web-header #surentete .srentss{background-color:#fff;border:1px solid #eaeade}#istex-web-header #surentete .srentss>li{border:0}#istex-web-header #surentete .srentss>li+li{border-top:1px solid #eaeade}#istex-web-header #surentete .srent{margin-top:9px;padding:0}#istex-web-header #surentete .srent.border{margin-top:8px;border:1px solid #eaeade;border-bottom:0}#istex-web-header #surentete .srent img{vertical-align:middle}#istex-web-header #surentete a.disabled{color:#777;text-decoration:none;cursor:not-allowed}#dokuwiki__site{position:relative} .type { text-decoration: underline; max-width: 10em; }</style><script type="text/javascript" src="chrome-extension://homgcnaoacgigpkkljjjekpignblkeae/detector.js"></script><script type="text/javascript" src="data:text/javascript;base64,d2luZG93LkdyZWVuVHVydGxlT3B0aW9ucyA9IHsgbWljcm9kYXRhRW5hYmxlZDogZmFsc2UgfTs="></script><script type="text/javascript" src="chrome-extension://loggcajcfkpdeoaeihclldihfefijjam/RDFa.js"></script></head>
+<body about="https://api.istex.fr/documentation/">
+    <div id="page">
+        <a name="top">
+        </a><header id="header"><a name="top">
+            </a><h1><a name="top"></a><a href="https://api.istex.fr/documentation/">ISTEX API Documentation</a></h1>
+        </header>
+
+
+<div id="sidebar">
+    <form action="https://api.istex.fr/documentation/search.html">
+        <input id="search" type="text" placeholder="Search" name="q">
+    </form>
+    <nav id="toc">
+        <ol>
+            <li>
+                <a href="https://api.istex.fr/documentation/050-global.html#acces-aux-donnees">Accès aux données</a>
+                <ol>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/050-global.html#liste-des-champs-et-formats-disponibles">Liste des champs et formats disponibles</a>
+                        <ol>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="https://api.istex.fr/documentation/100-metas.html#acces-aux-metadonnees">Accès aux métadonnées</a>
+                <ol>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/100-metas.html#liste-des-formats-disponibles">Liste des formats disponibles</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/100-metas.html#notices-dorigine">Notices d'origine</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/100-metas.html#format-pivot-mods">Format pivot Mods</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/100-metas.html#notices-xml">Notices XML</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/100-metas.html#notices-marc">Notices Marc</a>
+                        <ol>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="https://api.istex.fr/documentation/200-fulltext.html#acces-au-fulltext">Accès au fulltext</a>
+                <ol>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/200-fulltext.html#liste-des-formats-disponibles">Liste des formats disponibles</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/200-fulltext.html#documents-primaires-format-original">Document(s) primaire(s)  (format original)</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/200-fulltext.html#autres-formats">Autres formats</a>
+                        <ol>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="https://api.istex.fr/documentation/250-enrichments.html#enrichissements">Enrichissements</a>
+                <ol>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/250-enrichments.html#acces-aux-enrichissements">Accès aux enrichissements</a>
+                        <ol>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/250-enrichments.html#liste-des-enrichissements-disponibles">Liste des enrichissements disponibles</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/250-enrichments.html#recuperation-des-enrichissements">Récupération des enrichissements</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/250-enrichments.html#consolidation-des-enrichissements-avec-le-tei-de-base">Consolidation des enrichissements avec le TEI de base</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/250-enrichments.html#ajout-denrichissements">Ajout d'enrichissements</a>
+                        <ol>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="https://api.istex.fr/documentation/300-search.html#recherche-de-documents">Recherche de documents</a>
+                <ol>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#calcul-du-score">Calcul du score</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#recherche-globale">Recherche globale</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#recherche-avancee">Recherche avancée</a>
+                        <ol>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#recherche-par-auteur">Recherche par auteur</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#recherche-par-redacteur">Recherche par rédacteur</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#recherche-par-genre-de-document">Recherche par genre de document</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#recherche-par-genre-de-serie">Recherche par genre de série</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#recherche-par-sujet">Recherche par sujet</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#recherche-par-sujet-de-serie">Recherche par sujet de série</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#recherche-par-langue">Recherche par langue</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#syntaxe-des-requetes">Syntaxe des requêtes</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#recherche-par-corpus">Recherche par corpus</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#selection-des-champs-renvoyes">Sélection des champs renvoyés</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#facettes">Facettes</a>
+                        <ol>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#alias-disponibles">Alias disponibles</a>
+                            </li>
+                            <li>
+                                <a href="https://api.istex.fr/documentation/300-search.html#facettes-dynamiques-basees-sur-le-mapping">Facettes dynamiques basées sur le mapping</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#tris-bases-sur-le-mapping">Tris basés sur le mapping</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#tri-aleatoire">Tri aléatoire</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#parametres-de-pagination">Paramètres de pagination</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#operateur-par-defaut">Opérateur par défaut</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#exemples-de-recherche-combinant-tous-les-parametres">Exemples de recherche combinant tous les paramètres</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/300-search.html#liste-des-editeurs-disponibles">Liste des éditeurs disponibles</a>
+                        <ol>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="https://api.istex.fr/documentation/350-openurl.html#openurl-10">OpenURL 1.0</a>
+                <ol>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/350-openurl.html#implementation-du-standard-z3988-2004">Implémentation du standard Z39.88-2004</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/350-openurl.html#resolveur-de-liens">Résolveur de liens</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/350-openurl.html#desactiver-la-redirection-automatique-vers-la-ressource">Désactiver la redirection automatique vers la ressource</a>
+                        <ol>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="https://api.istex.fr/documentation/400-faq.html#faq-foire-aux-questions">FAQ (Foire aux questions)</a>
+                <ol>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/400-faq.html#quest-ce-que-le-format-mods">Qu'est-ce que le format Mods ?</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/400-faq.html#quentend-t-on-par-identification-avec-basic-auth">Qu'entend-t-on par identification avec basic-auth ?</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/400-faq.html#je-narrive-pas-a-me-connecter-a-lapi-lacces-mest-refuse">Je n'arrive pas à me connecter à l'API, l'accès m'est refusé !</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/400-faq.html#usage-documentaire-vs-usage-recherche">Usage documentaire Vs. Usage recherche ?</a>
+                        <ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="https://api.istex.fr/documentation/400-faq.html#a-quoi-servent-les-indicateurs-de-qualite">À quoi servent les "indicateurs de qualité" ?</a>
+                        <ol>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </nav>
+    <nav id="links">
+        <ul>
+        </ul>
+    </nav>
+</div>
+
+    <div id="content">
+        <h1 id="api-istex-http-rest">Types d'article</h1>
+
+        <p>
+            La facette <strong>genre</strong> du démonstrateur ISTEX correspond aux types des articles présents dans les résultats.
+        </p>
+        <p>
+            Voici la liste des différents types:
+        </p>
+
+        <ul id="types">
+        <li class="type" about="http://article-type.lod.istex.fr/=/research-article"   >research-article</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/review-article"     >review-article</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/article"            >article</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/case-report"        >case-report</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/brief-communication">brief-communication</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/abstract"           >abstract</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/editorial"          >editorial</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/book-reviews"       >book-reviews</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/conference"         >conference</li>
+        <li class="type" about="http://article-type.lod.istex.fr/=/other"              >other</li>
+        </ul>
+        <p>
+            Passez la souris au-dessus de ces différentes valeurs pour visualiser des informations venant de LODEX à propos de ces types d'articles.
+        </p>
+
+
+    </div>
+    <footer id="footer">
+        Powered by <a href="http://github.com/maximebf/beautiful-docs">beautiful-docs</a> -
+        <a href="https://api.istex.fr/documentation/#top">Back to top</a> - <a href="https://api.istex.fr/documentation/all.html">Everything on a single page</a>
+        - <a href="https://api.istex.fr/documentation/?print=1">Print current page</a> - <a href="https://api.istex.fr/documentation/all.html?print=1">Print all pages</a>
+
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var LodexWidget = require("lodex-widget");
+    var lw = new LodexWidget('#types .type', { persistent: true });
+    lw.apply();
+</script>
+</body></html>

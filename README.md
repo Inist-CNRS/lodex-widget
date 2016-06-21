@@ -17,7 +17,7 @@ Require the [lodex-widget.js](https://rawgit.com/Inist-CNRS/lodex-widget/master/
 
 If you put the script in your site's sources, copy the
 [LODEX-10.png](https://rawgit.com/Inist-CNRS/lodex-widget/master/LODEX-10.png)
-in the same directory.
+in the directory of the HTML page.
 
 ## Usage
 
