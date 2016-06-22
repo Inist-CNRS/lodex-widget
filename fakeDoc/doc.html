@@ -314,7 +314,36 @@
 
 <script type="text/javascript">
     var LodexWidget = require("lodex-widget");
-    var lw = new LodexWidget('#types .type', { persistent: true });
+    var lw = new LodexWidget('#types .type',
+        {
+            persistent: true,
+            jbjStylesheet: {
+                "get": 0,
+                "$label": {
+                  "getJsonLdField": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+                  "get": "content"
+                },
+                "$description": {
+                  "getJsonLdField": "http://www.w3.org/2004/02/skos/core#definition",
+                  "get": "content"
+                },
+                "$note": {
+                  "getJsonLdField": "http://www.w3.org/2004/02/skos/core#note",
+                  "get": "content"
+                },
+                "$scopeNote": {
+                  "getJsonLdField": "http://www.w3.org/2004/02/skos/core#scopeNote",
+                  "get": "content",
+                  "trim": true
+                },
+                "$example": {
+                  "getJsonLdField": "http://www.w3.org/2004/02/skos/core#example",
+                  "get": "content"
+                },
+                "mask": "label,description,note,scopeNote,example",
+                "template": "<style>dt {font-weight: bold}</style><dl>\n<dt>skos-xl:prefLabel</dt><dd>{{label}}</dd>\n<dt>skos:definition</dt><dd>{{description}}</dd>\n<dt>skos:note</dt><dd>{{note}}</dd>\n<dt>skos:scopeNote</dt><dd>{{scopeNote}}</dd>\n<dt>skos:example</dt><dd>{{example}}</dd>\n</dl>\n"
+            }
+        });
     lw.apply();
 </script>
 </body></html>
