@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>Lod Widget test 3</title>
-    <script src="./lodex-widget.js"></script>
+    <title>Lod Widget test 4</title>
+    <script src="../lodex-widget.js"></script>
 </head>
 
 <body>
 
     <p>
-        Display semantic web verbs.
+        More information displayed here, thanks to a longer JBJ stylesheet. This time, we stick to the English texts.
     </p>
 
     <h2>Article Type</h2>
@@ -52,19 +52,19 @@ var lw = new LodexWidget('#article-types .facet', {
   jbjStylesheet: {
     "get": 0,
     "$label": {
-      "getJsonLdField": "http://www.w3.org/2008/05/skos-xl#prefLabel",
+      "getJsonLdField": ["http://www.w3.org/2008/05/skos-xl#prefLabel","en"],
       "get": "content"
     },
     "$description": {
-      "getJsonLdField": "http://www.w3.org/2004/02/skos/core#definition",
+      "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#definition","en"],
       "get": "content"
     },
     "$note": {
-      "getJsonLdField": "http://www.w3.org/2004/02/skos/core#note",
+      "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#note", "en"],
       "get": "content"
     },
     "$scopeNote": {
-      "getJsonLdField": "http://www.w3.org/2004/02/skos/core#scopeNote",
+      "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#scopeNote","en"],
       "get": "content",
       "trim": true
     },
@@ -73,7 +73,7 @@ var lw = new LodexWidget('#article-types .facet', {
       "get": "content"
     },
     "mask": "label,description,note,scopeNote,example",
-    "template": "<style>dt {font-weight: bold}</style><dl>\n<dt>skos-xl:prefLabel</dt><dd>{{label}}</dd>\n<dt>skos:definition</dt><dd>{{description}}</dd>\n<dt>skos:note</dt><dd>{{note}}</dd>\n<dt>skos:scopeNote</dt><dd>{{scopeNote}}</dd>\n<dt>skos:example</dt><dd>{{example}}</dd>\n</dl>\n"
+    "template": "<h3>{{label}}</h3>\n<p>{{description}}</p>\n<p>{{note}} ({{scopeNote}})</p>\n<pre>{{example}}</pre>"
   }
 })
 .apply();
