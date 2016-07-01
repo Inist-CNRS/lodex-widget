@@ -88,6 +88,10 @@ lw.apply();
 
 ![Example of tooltips on Articles Types](lodex-widget-research-article.png)
 
+## More Examples
+
+See http://inist-cnrs.github.io/lodex-widget/
+
 ## LodexWidget
 Parameters: [items selector](#items-selector), [options](#options).
 
