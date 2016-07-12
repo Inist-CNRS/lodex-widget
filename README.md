@@ -171,7 +171,7 @@ URL contained in the `about` attribute of the items selected.
 ]
 ```
 
-**Default stylesheet**:
+**Default JBJ stylesheet**:
 
 ```json
 {
@@ -218,7 +218,7 @@ var lw = new LodexWidget('#article-types .facet', {
             "get": "content"
         },
         "$note": {
-            "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#note", "en"],
+            "getJsonLdField": ["http://www.w3.org/2004/02/skos/core#note","en"],
             "get": "content"
         },
         "$scopeNote": {
@@ -251,7 +251,7 @@ lw.apply();
 ## desactivate
 LodexWidget's method, to desactivate its tooltips in the page.
 
-See [example 5](./example5.html).
+See [example 5](./examples/example5.html).
 
 ## activate
 
@@ -259,4 +259,14 @@ LodexWidget's method, to activate its tooltips in the page.
 They are activated by default, but it can be useful after usage of
 `desactivate()`.
 
-See [example 5](./example5.html).
+See [example 5](./examples/example5.html).
+
+
+## CSS styling
+
+If you want to customize more the tooltips, you can use CSS to modifiy
+`html5tooltip-box` class (containing a `html5tooltip-text`), as specified in
+[html5tooltipjs](https://github.com/ytiurin/html5tooltipsjs#styling)
+documentation.
+
+See [example 7](./examples/example7.html).
